@@ -10,6 +10,6 @@
     <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Syncfusion.SfDiagram.WPF" Version="18.1.0.59" />
+    <PackageReference Include="Syncfusion.SfDiagram.WPF" />
   </ItemGroup>
 </Project>
