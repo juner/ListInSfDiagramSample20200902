@@ -1,0 +1,9 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Update="Syncfusion.SfDiagram.WPF" Version="18.1.0.59" />
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(Configuration)'=='Debug'">
+    <Exec Command="dotnet tool restore" />
+    <Exec Command="dotnet tool run dotnet-format" />
+  </Target>
+</Project>

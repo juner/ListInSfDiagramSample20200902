@@ -1,0 +1,75 @@
+﻿<Window x:Class="ListInSfDiagramSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="200" Padding="10">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Syncfusion.SfDiagram.Wpf;component/Resources/BasicShapes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="syncfusion:Node">
+                <Setter Property="ShapeStyle">
+                    <Setter.Value>
+                        <Style TargetType="{x:Type Path}">
+                            <Setter Property="Fill" Value="Transparent"/>
+                            <Setter Property="Stretch" Value="Uniform"/>
+                            <Setter Property="Stroke" Value="Red"/>
+                            <Setter Property="StrokeThickness" Value="3"/>
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Shape" Value="{StaticResource Ellipse}"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock>single</TextBlock>
+        <StackPanel HorizontalAlignment="Left" Margin="5,5,5,20">
+            <syncfusion:SfDiagram Background="Yellow" Height="120" Width="120" Tool="None" HorizontalRuler="{x:Null}" VerticalRuler="{x:Null}">
+                <syncfusion:SfDiagram.Nodes>
+                    <syncfusion:NodeCollection>
+                        <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
+                    </syncfusion:NodeCollection>
+                </syncfusion:SfDiagram.Nodes>
+                <syncfusion:SfDiagram.PageSettings>
+                    <syncfusion:PageSettings PageHeight="100" PageWidth="100" PageBackground="Transparent"/>
+                </syncfusion:SfDiagram.PageSettings>
+                <syncfusion:SfDiagram.ScrollSettings>
+                    <syncfusion:ScrollSettings ScrollLimit="Diagram" AutoScrollLimit="Diagram" DragLimit="Diagram" />
+                </syncfusion:SfDiagram.ScrollSettings>
+            </syncfusion:SfDiagram>
+        </StackPanel>
+        <TextBlock>in list</TextBlock>
+        <ListView VerticalContentAlignment="Top" HorizontalContentAlignment="Left">
+            <ListView.ItemsSource>
+                <CompositeCollection>
+                    <sys:String>test</sys:String>
+                    <sys:String>test</sys:String>
+                </CompositeCollection>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <syncfusion:SfDiagram Background="Yellow" Height="120" Width="120" Tool="None"
+HorizontalRuler="{x:Null}" VerticalRuler="{x:Null}">
+                        <syncfusion:SfDiagram.Nodes>
+                            <syncfusion:NodeCollection>
+                                <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
+                            </syncfusion:NodeCollection>
+                        </syncfusion:SfDiagram.Nodes>
+                        <syncfusion:SfDiagram.PageSettings>
+                            <syncfusion:PageSettings PageHeight="100" PageWidth="100" PageBackground="Transparent"/>
+                        </syncfusion:SfDiagram.PageSettings>
+                        <syncfusion:SfDiagram.ScrollSettings>
+                            <syncfusion:ScrollSettings ScrollLimit="Diagram" AutoScrollLimit="Diagram" DragLimit="Diagram" />
+                        </syncfusion:SfDiagram.ScrollSettings>
+                    </syncfusion:SfDiagram>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Window>

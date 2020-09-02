@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp3.1;net48</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings>
+    <RuntimeIdentifiers>win10-x64;win10-x86</RuntimeIdentifiers>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.SfDiagram.WPF" Version="18.1.0.59" />
+  </ItemGroup>
+</Project>
