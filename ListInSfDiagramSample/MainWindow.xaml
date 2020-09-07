@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:uc="clr-namespace:ListInSfDiagramSample.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="200" Padding="10">
     <Window.Resources>
@@ -25,42 +26,26 @@
                 </Setter>
                 <Setter Property="Shape" Value="{StaticResource Ellipse}"/>
             </Style>
-            <Style TargetType="{x:Type syncfusion:SfDiagram}">
+            <Style TargetType="{x:Type uc:SfDiagram}">
                 <Setter Property="Background" Value="Yellow"/>
                 <Setter Property="Height" Value="120"/>
                 <Setter Property="Width" Value="120"/>
                 <Setter Property="Tool" Value="None"/>
                 <Setter Property="HorizontalRuler" Value="{x:Null}"/>
                 <Setter Property="VerticalRuler" Value="{x:Null}"/>
-                <Setter Property="PageSettings">
-                    <Setter.Value>
-                        <syncfusion:PageSettings
-                            PageHeight="100" 
-                            PageWidth="100" 
-                            PageBackground="Transparent"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="ScrollSettings">
-                    <Setter.Value>
-                        <syncfusion:ScrollSettings 
-                            ScrollLimit="Diagram" 
-                            AutoScrollLimit="Diagram" 
-                            DragLimit="Diagram" />
-                    </Setter.Value>
-                </Setter>
             </Style>
         </ResourceDictionary>
     </Window.Resources>
     <StackPanel>
         <TextBlock>single</TextBlock>
         <StackPanel HorizontalAlignment="Left" Margin="5,5,5,20">
-            <syncfusion:SfDiagram >
-                <syncfusion:SfDiagram.Nodes>
+            <uc:SfDiagram >
+                <uc:SfDiagram.Nodes>
                     <syncfusion:NodeCollection>
                         <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
                     </syncfusion:NodeCollection>
-                </syncfusion:SfDiagram.Nodes>
-            </syncfusion:SfDiagram>
+                </uc:SfDiagram.Nodes>
+            </uc:SfDiagram>
         </StackPanel>
         <TextBlock>in list</TextBlock>
         <ListView VerticalContentAlignment="Top" HorizontalContentAlignment="Left">
@@ -72,13 +57,13 @@
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <syncfusion:SfDiagram>
-                        <syncfusion:SfDiagram.Nodes>
+                    <uc:SfDiagram>
+                        <uc:SfDiagram.Nodes>
                             <syncfusion:NodeCollection>
                                 <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
                             </syncfusion:NodeCollection>
-                        </syncfusion:SfDiagram.Nodes>
-                    </syncfusion:SfDiagram>
+                        </uc:SfDiagram.Nodes>
+                    </uc:SfDiagram>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
