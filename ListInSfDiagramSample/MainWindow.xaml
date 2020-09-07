@@ -33,6 +33,12 @@
                 <Setter Property="Tool" Value="None"/>
                 <Setter Property="HorizontalRuler" Value="{x:Null}"/>
                 <Setter Property="VerticalRuler" Value="{x:Null}"/>
+                <Setter Property="PageBackground" Value="Transparent"/>
+                <Setter Property="PageHeight" Value="100"/>
+                <Setter Property="PageWidth" Value="100"/>
+                <Setter Property="ScrollLimit" Value="Diagram"/>
+                <Setter Property="AutoScrollLimit" Value="Diagram"/>
+                <Setter Property="DragLimit" Value="Diagram"/>
             </Style>
         </ResourceDictionary>
     </Window.Resources>
