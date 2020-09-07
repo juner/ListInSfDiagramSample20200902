@@ -1,4 +1,4 @@
-﻿<Window x:Class="ListInSfDiagramSample.MainWindow"
+<Window x:Class="ListInSfDiagramSample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -25,23 +25,41 @@
                 </Setter>
                 <Setter Property="Shape" Value="{StaticResource Ellipse}"/>
             </Style>
+            <Style TargetType="{x:Type syncfusion:SfDiagram}">
+                <Setter Property="Background" Value="Yellow"/>
+                <Setter Property="Height" Value="120"/>
+                <Setter Property="Width" Value="120"/>
+                <Setter Property="Tool" Value="None"/>
+                <Setter Property="HorizontalRuler" Value="{x:Null}"/>
+                <Setter Property="VerticalRuler" Value="{x:Null}"/>
+                <Setter Property="PageSettings">
+                    <Setter.Value>
+                        <syncfusion:PageSettings
+                            PageHeight="100" 
+                            PageWidth="100" 
+                            PageBackground="Transparent"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ScrollSettings">
+                    <Setter.Value>
+                        <syncfusion:ScrollSettings 
+                            ScrollLimit="Diagram" 
+                            AutoScrollLimit="Diagram" 
+                            DragLimit="Diagram" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
     <StackPanel>
         <TextBlock>single</TextBlock>
         <StackPanel HorizontalAlignment="Left" Margin="5,5,5,20">
-            <syncfusion:SfDiagram Background="Yellow" Height="120" Width="120" Tool="None" HorizontalRuler="{x:Null}" VerticalRuler="{x:Null}">
+            <syncfusion:SfDiagram >
                 <syncfusion:SfDiagram.Nodes>
                     <syncfusion:NodeCollection>
                         <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
                     </syncfusion:NodeCollection>
                 </syncfusion:SfDiagram.Nodes>
-                <syncfusion:SfDiagram.PageSettings>
-                    <syncfusion:PageSettings PageHeight="100" PageWidth="100" PageBackground="Transparent"/>
-                </syncfusion:SfDiagram.PageSettings>
-                <syncfusion:SfDiagram.ScrollSettings>
-                    <syncfusion:ScrollSettings ScrollLimit="Diagram" AutoScrollLimit="Diagram" DragLimit="Diagram" />
-                </syncfusion:SfDiagram.ScrollSettings>
             </syncfusion:SfDiagram>
         </StackPanel>
         <TextBlock>in list</TextBlock>
@@ -54,19 +72,12 @@
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <syncfusion:SfDiagram Background="Yellow" Height="120" Width="120" Tool="None"
-HorizontalRuler="{x:Null}" VerticalRuler="{x:Null}">
+                    <syncfusion:SfDiagram>
                         <syncfusion:SfDiagram.Nodes>
                             <syncfusion:NodeCollection>
                                 <syncfusion:NodeViewModel UnitHeight="50" UnitWidth="50" OffsetX="30" OffsetY="30" />
                             </syncfusion:NodeCollection>
                         </syncfusion:SfDiagram.Nodes>
-                        <syncfusion:SfDiagram.PageSettings>
-                            <syncfusion:PageSettings PageHeight="100" PageWidth="100" PageBackground="Transparent"/>
-                        </syncfusion:SfDiagram.PageSettings>
-                        <syncfusion:SfDiagram.ScrollSettings>
-                            <syncfusion:ScrollSettings ScrollLimit="Diagram" AutoScrollLimit="Diagram" DragLimit="Diagram" />
-                        </syncfusion:SfDiagram.ScrollSettings>
                     </syncfusion:SfDiagram>
                 </DataTemplate>
             </ListView.ItemTemplate>
